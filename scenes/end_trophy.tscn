@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgl3ggl2ruxvq"]
+
+[ext_resource type="Script" path="res://scenes/end_trophy.gd" id="1_ghm6i"]
+[ext_resource type="Texture2D" uid="uid://7dc3nh8jvjus" path="res://End (Idle).png" id="1_rlqva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2s7y"]
+size = Vector2(16.2118, 48.5739)
+
+[node name="EndTrophy" type="Area2D"]
+script = ExtResource("1_ghm6i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.03025, 0.982725)
+texture = ExtResource("1_rlqva")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.316002, 10)
+scale = Vector2(2.92183, 0.864662)
+shape = SubResource("RectangleShape2D_t2s7y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
